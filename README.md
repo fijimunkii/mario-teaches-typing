@@ -1,0 +1,4 @@
+typestar
+========
+
+customizable typing game
