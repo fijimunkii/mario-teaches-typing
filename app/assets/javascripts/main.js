@@ -73,6 +73,8 @@ $(function() {
         requiredKey = requiredText[0],
         hopefulNewText = requiredText.slice(1);
 
+    console.log(userKey);
+
     if (userKey === requiredKey) {
       $('#word-to-type')[0].textContent = hopefulNewText;
       lettersCorrect++;
