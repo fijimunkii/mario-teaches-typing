@@ -28,3 +28,20 @@ body {
   padding: 30px 0 0 20px;
   line-height: 1.2;
 }
+
+#word-to-type {
+  z-index: 1;
+  position:absolute;
+  left:20%;
+  top:50%;
+  width: 550px;
+  height: 80px;
+  padding: 30px 0 0 0;
+  text-align: center;
+  vertical-align: middle;
+  background: #9C4B1D;
+  color: #F9D4B4;
+  border: 1px solid #F9CDC5;
+  font-family: 'Super Plumber Bros';
+  font-size: 50px;
+}

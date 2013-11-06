@@ -29,8 +29,11 @@ Tile.loadTiles = function(opt) {
   }
 
   // space for character or bad dude
-
-  tableString += '<tr><td><div class=\'tile\'></div></td></tr>';
+  if (opt.dude && opt.dude === 'bad_dude') {
+    tableString += '<tr><td><div class=\'tile koopa\'></div></td></tr>';
+  } else {
+    tableString += '<tr><td><div class=\'tile\'></div></td></tr>';
+  }
 
   // the ground
   for (var i=0; i<2; i++) {
