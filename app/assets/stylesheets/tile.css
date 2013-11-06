@@ -1,0 +1,14 @@
+.tile {
+  height: 16px;
+  width: 16px;
+}
+
+.column { float: left; }
+
+.rock { background:url(mario-bg-sprite.png); }
+
+.brick { background:url(mario-bg-sprite.png) -16px 0; }
+
+.block { background:url(mario-bg-sprite.png) -384px 0; }
+
+.cloud { background:url(mario-bg-sprite.png) -64px -336px; }
