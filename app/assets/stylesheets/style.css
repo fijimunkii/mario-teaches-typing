@@ -3,6 +3,11 @@
   src: url('Super Plumber Brothers.ttf')
 }
 
+@font-face {
+  font-family: 'smb';
+  src: url('smbfont.ttf');
+}
+
 body {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -42,6 +47,7 @@ body {
   background: #9C4B1D;
   color: #F9D4B4;
   border: 1px solid #F9CDC5;
-  font-family: 'Super Plumber Bros';
-  font-size: 50px;
+  font-family: 'smb';
+  font-size: 60px;
+  letter-spacing: 2px;
 }

@@ -34,28 +34,39 @@ $(function() {
     GameController.genColumn();
   }
 
+  var soundBoard = new GameController.SoundBoard();
+  soundBoard.playMusic();
+
+
   function removeAndAdd(opt) {
+    var firstColumn = $('#game-container')[0].children[0];
 
     if ($('#game-container > .bad-dude')[0] && opt === 'kill_a_dude') {
       var youGonnaDie = $('#game-container > .bad-dude')[0];
       $(youGonnaDie).remove();
-      var audio = new Audio('../sounds/lava.wav');
-      audio.play();
+      soundBoard.playLava();
 
     } else {
-      var firstColumn = $('#game-container')[0].children[0];
       if ($(firstColumn).hasClass('bad-dude')) {
         clearInterval(gameRunning);
-        var audio = new Audio('../sounds/lost_a_life.wav');
-        audio.play();
+        soundBoard.pauseMusic();
+        soundBoard.playLostLife();
+        $(window).off();
+      }
+      if ( $(firstColumn).hasClass('coin-column') ) {
+        soundBoard.playCoin();
       }
       $(firstColumn).remove();
     }
 
     if (opt === 'bad_dude') {
       GameController.genColumn({bad_dude: true});
+
+    } else if (opt === 'kill_a_dude') {
+      GameController.genColumn({coin: true});
+
     } else {
-    GameController.genColumn(null);
+      GameController.genColumn(null);
     }
 
   }
@@ -64,7 +75,7 @@ $(function() {
 
   wordString = 'Thwomp, thwomp as fast as you can. You\'ll never squish the great Jumpman. Those cubic creeps with angry eyes will never see their master rise.'
 
-  $('#word-to-type').html('mario teaches typing. ');
+  $('#word-to-type').html('Mario Teaches Typing. ');
 
   $(window).on('keypress', function(e) {
     e.preventDefault;
@@ -78,10 +89,6 @@ $(function() {
     if (userKey === requiredKey) {
       $('#word-to-type')[0].textContent = hopefulNewText;
       lettersCorrect++;
-      if (lettersCorrect >= 10) {
-        var audio = new Audio('../sounds/coin.wav');
-        audio.play();
-      }
 
       if (userKey === ' ') {
         var spaceIndex = wordString.indexOf(' ') + 1;
@@ -94,16 +101,13 @@ $(function() {
         removeAndAdd('kill_a_dude');
 
         if (wordsCorrect === 10) {
-          var audio = new Audio('../sounds/1-up.wav');
-          audio.play();
+          soundBoard.playOneUp();
         } else if (wordsCorrect === 20) {
-          var audio = new Audio('../sounds/yoshi.wav');
-          audio.play();
+          soundBoard.playYoshi();
         }
       }
     } else {
-      var audio = new Audio('../sounds/blargg.wav');
-      audio.play();
+      soundBoard.playBlargg();
       removeAndAdd('bad_dude');
       wordsCorrect = 0;
       lettersCorrect = 0;
@@ -112,8 +116,8 @@ $(function() {
     if ($('#word-to-type')[0].textContent === '') {
       clearInterval(gameRunning);
       $(window).off();
-      var audio = new Audio('../sounds/course_clear.wav');
-      audio.play();
+      soundBoard.pauseMusic();
+      soundBoard.playCourseClear();
     }
 
   });

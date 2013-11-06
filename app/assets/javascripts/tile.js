@@ -31,6 +31,8 @@ Tile.loadTiles = function(opt) {
   // space for character or bad dude
   if (opt.dude && opt.dude === 'bad_dude') {
     tableString += '<tr><td><div class=\'tile koopa\'></div></td></tr>';
+  } else if ( opt.dude && opt.dude == 'coin' ) {
+    tableString += '<tr><td><div class=\'tile coin\'></div></td></tr>';
   } else {
     tableString += '<tr><td><div class=\'tile\'></div></td></tr>';
   }

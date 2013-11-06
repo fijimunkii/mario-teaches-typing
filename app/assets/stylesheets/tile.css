@@ -14,3 +14,5 @@
 .cloud { background:url(mario-bg-sprite.png) -64px -336px; }
 
 .koopa { background:url(mario-bg-sprite.png) -256px 0; }
+
+.coin { background:url(mario-bg-sprite.png) -384px -16px; }
