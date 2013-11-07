@@ -35,9 +35,9 @@ $(function() {
   }
 
   var soundBoard = new GameController.SoundBoard();
-  soundBoard.playMusic();
+  // soundBoard.playMusic();
 
-  var gameRunning = setInterval(removeAndAdd, 100);
+  var gameRunning = setInterval(removeAndAdd, 120);
 
   wordString = 'Thwomp, thwomp as fast as you can. You\'ll never squish the great Jumpman. Those cubic creeps with angry eyes will never see their master rise.'
 
