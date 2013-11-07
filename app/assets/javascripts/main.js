@@ -37,25 +37,48 @@ $(function() {
   var soundBoard = new GameController.SoundBoard();
   soundBoard.playMusic();
 
+  var gameRunning = setInterval(removeAndAdd, 100);
+
+  wordString = 'Thwomp, thwomp as fast as you can. You\'ll never squish the great Jumpman. Those cubic creeps with angry eyes will never see their master rise.'
+
+  $('#word-to-type').html('Mario Teaches Typing. ');
+
+  var $marioDiv = $('<div>');
+  $marioDiv.addClass('mario-small-1');
+  $('body').append($marioDiv);
+
+  var runMario = setInterval(function(){
+    if ($marioDiv.hasClass('mario-small-1')){
+      $marioDiv.removeClass();
+      $marioDiv.addClass('mario-small-2');
+    } else if ($marioDiv.hasClass('mario-small-2')){
+      $marioDiv.removeClass();
+      $marioDiv.addClass('mario-small-1');
+    }
+  }, 300)
+
 
   function removeAndAdd(opt) {
-    var firstColumn = $('#game-container')[0].children[0];
+    var marioColumn = $('#game-container')[0].children[4];
 
     if ($('#game-container > .bad-dude')[0] && opt === 'kill_a_dude') {
       var youGonnaDie = $('#game-container > .bad-dude')[0];
       $(youGonnaDie).remove();
       soundBoard.playLava();
 
+    } else if ($(marioColumn).hasClass('bad-dude')) {
+      clearInterval(gameRunning);
+      soundBoard.pauseMusic();
+      soundBoard.playLostLife();
+      $(window).off();
+      $(marioColumn).remove();
+
+    } else if ( $(marioColumn).hasClass('coin-column') ) {
+      soundBoard.playCoin();
+      $(marioColumn).remove();
+
     } else {
-      if ($(firstColumn).hasClass('bad-dude')) {
-        clearInterval(gameRunning);
-        soundBoard.pauseMusic();
-        soundBoard.playLostLife();
-        $(window).off();
-      }
-      if ( $(firstColumn).hasClass('coin-column') ) {
-        soundBoard.playCoin();
-      }
+      firstColumn = $('#game-container')[0].children[0];
       $(firstColumn).remove();
     }
 
@@ -70,12 +93,6 @@ $(function() {
     }
 
   }
-
-  var gameRunning = setInterval(removeAndAdd, 100);
-
-  wordString = 'Thwomp, thwomp as fast as you can. You\'ll never squish the great Jumpman. Those cubic creeps with angry eyes will never see their master rise.'
-
-  $('#word-to-type').html('Mario Teaches Typing. ');
 
   $(window).on('keypress', function(e) {
     e.preventDefault;

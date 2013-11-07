@@ -13,6 +13,28 @@
 
 .cloud { background:url(mario-bg-sprite.png) -64px -336px; }
 
-.koopa { background:url(mario-bg-sprite.png) -256px 0; }
+.mushroom { background:url(mario-bg-sprite.png) -256px 0; }
 
 .coin { background:url(mario-bg-sprite.png) -384px -16px; }
+
+.koopa { background:url(mario-char-sprite.gif) -296px -187px;}
+
+.mario-small-1 {
+  z-index: 1;
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  bottom: 32px;
+  left: 64px;
+  background:url(mario-char-sprite.gif) -320px -42px;
+}
+
+.mario-small-2 {
+  z-index: 1;
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  bottom: 32px;
+  left: 64px;
+  background:url(mario-char-sprite.gif) -289px -42px;
+}
