@@ -6,7 +6,7 @@ Tile.isCloud = {cloudNum: 1};
 // 77% chance of rain
 Tile.randCloud = function() {
   var randNum = Math.floor(Math.random()*11);
-  if (randNum % 77 === 0) {
+  if (randNum % 777 === 0) {
     this.isCloud = {cloudNum: 1};
   }
 }
