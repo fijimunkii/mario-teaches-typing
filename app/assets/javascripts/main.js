@@ -35,7 +35,7 @@ $(function() {
   }
 
   var soundBoard = new GameController.SoundBoard();
-  // soundBoard.playMusic();
+  soundBoard.playMusic();
 
   var gameRunning = setInterval(removeAndAdd, 120);
 
