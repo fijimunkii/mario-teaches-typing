@@ -7,6 +7,8 @@ gem 'pg'
 gem 'haml-rails'
 gem 'puma'
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'erb2haml'
   gem 'pry-rails'
