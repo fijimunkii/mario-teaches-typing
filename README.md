@@ -1,4 +1,0 @@
-typestar
-========
-
-customizable typing game
