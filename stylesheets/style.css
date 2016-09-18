@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Super Plumber Bros';
+  src: url('Super Plumber Brothers.ttf')
+}
+
+@font-face {
+  font-family: 'smb';
+  src: url('smbfont.ttf');
+}
+
+body {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  background: #7F8BE3;
+}
+
+.logo {
+  background: #9C4B1D;
+  color: #F9D4B4;
+  border: 1px solid #F9CDC5;
+  font-family: 'Super Plumber Bros';
+  font-size: 90px;
+  position: relative;
+  top: 100px;
+  width: 500px;
+  height: 210px;
+  margin: 0 auto;
+  padding: 30px 0 0 20px;
+  line-height: 1.2;
+}
+
+#word-to-type {
+  z-index: 1;
+  position:absolute;
+  left:20%;
+  top:50%;
+  width: 550px;
+  height: 80px;
+  padding: 30px 0 0 0;
+  text-align: center;
+  vertical-align: middle;
+  background: #9C4B1D;
+  color: #F9D4B4;
+  border: 1px solid #F9CDC5;
+  font-family: 'smb';
+  font-size: 60px;
+  letter-spacing: 2px;
+}

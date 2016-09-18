@@ -1,0 +1,47 @@
+.tile {
+  height: 16px;
+  width: 16px;
+}
+
+.column { float: left; }
+
+.rock { background:url(../images/mario-bg-sprite.png); }
+
+.brick { background:url(../images/mario-bg-sprite.png) -16px 0; }
+
+.block { background:url(../images/mario-bg-sprite.png) -384px 0; }
+
+.small-cloud { background:url(../images/mario-bg-sprite.png) -64px -336px; }
+
+.cloud-1-1 { background:url(../images/mario-bg-sprite.png) 0 -320px; }
+.cloud-2-1 { background:url(../images/mario-bg-sprite.png) -16px -320px; }
+.cloud-3-1 { background:url(../images/mario-bg-sprite.png) -32px -320px; }
+.cloud-1-2 { background:url(../images/mario-bg-sprite.png) 0 -336px; }
+.cloud-2-2 { background:url(../images/mario-bg-sprite.png) -16px -336px; }
+.cloud-3-2 { background:url(../images/mario-bg-sprite.png) -32px -336px; }
+
+.mushroom { background:url(../images/mario-bg-sprite.png) -256px 0; }
+
+.coin { background:url(../images/mario-bg-sprite.png) -384px -16px; }
+
+.koopa { background:url(../images/mario-char-sprite.gif) -296px -187px;}
+
+.mario-small-1 {
+  z-index: 1;
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  bottom: 28px;
+  left: 64px;
+  background:url(../images/mario-char-sprite.gif) -320px -42px;
+}
+
+.mario-small-2 {
+  z-index: 1;
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  bottom: 28px;
+  left: 64px;
+  background:url(../images/mario-char-sprite.gif) -289px -42px;
+}
